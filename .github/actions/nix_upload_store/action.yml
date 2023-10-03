@@ -1,0 +1,20 @@
+name: Nix Cache
+description: Cache Nix File To Temporary Directory
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        sudo systemctl stop nix-daemon
+        sudo chmod 777 /nix
+        # sudo cp -r /nix /tmp/nix-cache-dir
+
+        sudo rm -rf /nix/var/nix/daemon-socket/socket
+        sudo rm -rf /nix/var/nix/userpool
+        sudo rm -rf /nix/var/nix/gc.lock
+        sudo rm -rf /nix/var/nix/db/big-lock
+        sudo rm -rf /nix/var/nix/db/reserved
+        sudo rm -rf /nix/var/nix/userpool2
+
+        # tar -zcvf /tmp/nix-cache /tmp/nix-cache-dir/
