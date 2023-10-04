@@ -87,7 +87,7 @@ tracing-error = { version = "0.2", optional = true }
 tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"], optional = true }
 
 [dev-dependencies]
-cddl-cat = { version = "0.6.1" }
+cddl-cat = { version = "0.6.2" }
 hex = { version = "0.4", default-features = false }
 once_cell = { version = "1", default-features = false }
 tempfile = { version = "3.8.0" }
